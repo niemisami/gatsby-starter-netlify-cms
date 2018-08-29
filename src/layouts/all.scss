@@ -1,0 +1,108 @@
+@charset "utf-8";
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import 'helpers';
+
+// Set your brand colors
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+$bpt-red: #bf1e2e;
+$bpt-red-invert: #f0f0f0;
+$bpt-yellow: #ffc10d;
+$bpt-yellow-invert: #010101;
+// Update Bulma's global variables
+$family-sans-serif: "Nunito",
+sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $purple;
+$link: $pink;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+// Update some of Bulma's component variables
+$body-background-color: $bpt-red;
+$body-color: black;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+@import "~bulma/sass/utilities/initial-variables";
+// Config vars
+$primary: $bpt-red;
+$primary-invert: $bpt-red-invert;
+$title-color: $bpt-red-invert;
+$subtitle-color: $bpt-red-invert;
+$content-heading-color: $bpt-red-invert;
+.content .taglist {
+  list-style: none;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 1.5rem;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+  li {
+    padding: 0 2rem 1rem 0;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+  }
+}
+
+// Helper Classes
+.full-width-image-container {
+  width: 100vw;
+  height: 400px;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin: 5em -50vw;
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.margin-top-0 {
+  margin-top: 0 !important;
+}
+
+.navbar-item img {
+  max-height: none !important;
+}
+
+.bg-skew {
+  position: relative;
+  height: 435px;
+  width: 100%;
+  z-index: -100;
+  top: 0;
+  transform: skewY(-10deg) translateY(-250px);
+  background-color: $white-bis;
+}
+
+.unskew {
+  transform: skewY(10deg);
+}
+
+.hero-intro {
+  top: 260px;
+  .hero-content {
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: $bpt-yellow;
+    }
+  }
+}
+
+.bring-up {
+  margin-top: -100px;
+}
+$navbar-background-color: $white-bis;
+@import "~bulma";

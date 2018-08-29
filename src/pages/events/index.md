@@ -71,31 +71,26 @@ testimonials:
       stance on empowering farmers and transparency.
 full_image: /img/events-full-width.jpg
 pricing:
-  heading: Monthly subscriptions
+  heading: Pöytävuokraus
   description: >-
-    We make it easy to make great coffee a part of your life. Choose one of our
-    monthly subscription plans to receive great coffee at your doorstep each
-    month. Contact us about more details and payment info.
+    Kaipaatko itse tai yhdistyksesi tekemistä illanviettoihin? Vuokraamme pieneen tilaan taittuvia ja kannettavia BP-pöytiä edullisesti. Vuokraan sisältyy kupit sekä pelipallot, joita ei tarvitse palauttaa.
   plans:
-    - description: Perfect for the drinker who likes to enjoy 1-2 cups per day.
+    - description: Kaikki pelitarvikkeet päiväksi
       items:
-        - 3 lbs of coffee per month
-        - Green or roasted beans"
-        - One or two varieties of beans"
-      plan: Small
+        - Yksi (1) pöytä
+        - 20 kuppia
+        - 6 palloa
+      plan: Päivä
+      price: '20'
+    - description: Lisää viihdettä mökille tai tapahtumiin?
+      items:
+        - Peruspaketti
+        - 2-3 päivää
+      plan: Viikonloppu
       price: '50'
-    - description: 'Great for avid drinkers, java-loving couples and bigger crowds'
+    - description: Jotain muuta?
       items:
-        - 6 lbs of coffee per month
-        - Green or roasted beans
-        - Up to 4 different varieties of beans
-      plan: Big
-      price: '80'
-    - description: Want a few tiny batches from different varieties? Try our custom plan
-      items:
-        - Whatever you need
-        - Green or roasted beans
-        - Unlimited varieties
+        - Ota yhteyttä
       plan: Custom
       price: '??'
 ---

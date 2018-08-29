@@ -6,16 +6,14 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
+    <section className="section section--gradient bg-skew pb-0">
+      <div className="container hero-intro unskew has-text-black pb-0">
+      <div className="columns">
           <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
-            </div>
+            <h1 className="title is-size-1 has-text-black has-text-weight-bold is-bold-light">
+              {title}
+            </h1>
+            <PageContent className="content has-text-grey-dark hero-content" content={content} />
           </div>
         </div>
       </div>

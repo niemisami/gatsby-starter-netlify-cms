@@ -1,44 +1,50 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-
+import AboutPage from '../templates/about-page'
 export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
-
     return (
-      <section className="section">
-        <div className="container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
-          </div>
-          {posts
-            .map(({ node: post }) => (
-              <div
-                className="content"
-                style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-                key={post.id}
-              >
-                <p>
-                  <Link className="has-text-primary" to={post.fields.slug}>
-                    {post.frontmatter.title}
+      <Fragment>
+        <AboutPage {...this.props} />
+        <section className="section bring-up pt-0">
+          <div className="container">
+            <div className="content">
+              <div className="columns">
+                <div className="column is-10 is-offset-1">
+                  <h2 className="has-text-weight-bold is-size-4">Miten meillä menee</h2>
+                  {posts
+                    .map(({ node: post }) => (
+                      <div
+                        className="content"
+                        style={{ border: '1px solid #eaecee', color: '#0f0f0f', backgroundColor: '#fafafa', padding: '2em 4em' }}
+                        key={post.id}
+                      >
+                        <p>
+                          <Link className="has-text-primary" to={post.fields.slug}>
+                            {post.frontmatter.title}
+                          </Link>
+                          <span> &bull; </span>
+                          <small>{post.frontmatter.date}</small>
+                        </p>
+                        <p>
+                          {post.excerpt}
+                          <br />
+                          <br />
+                          <Link className="button is-small" to={post.fields.slug}>
+                            Lue lisää →
                   </Link>
-                  <span> &bull; </span>
-                  <small>{post.frontmatter.date}</small>
-                </p>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button is-small" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
+                        </p>
+                      </div>
+                    ))}
+                </div>
               </div>
-            ))}
-        </div>
-      </section>
+            </div>
+          </div>
+        </section>
+      </Fragment>
     )
   }
 }
@@ -51,26 +57,33 @@ IndexPage.propTypes = {
   }),
 }
 
+
 export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] },
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } }}
+  query PageQuery  {
+          allMarkdownRemark(
+            sort: {order: DESC, fields: [frontmatter___date] },
+      filter: {frontmatter: {templateKey: {eq: "blog-post" } }}
     ) {
-      edges {
+          edges {
         node {
           excerpt(pruneLength: 400)
-          id
+      id
           fields {
-            slug
-          }
-          frontmatter {
-            title
-            templateKey
-            date(formatString: "MMMM DD, YYYY")
-          }
+          slug
         }
+        frontmatter {
+          title
+            templateKey
+        date(formatString: "DD MMMM YYYY", locale: "FI-fi")
       }
     }
   }
-`
+},
+    markdownRemark(frontmatter: {templateKey: {eq: "about-page" }}) {
+          html
+          frontmatter {
+          title
+        }
+        }
+  }
+  `
